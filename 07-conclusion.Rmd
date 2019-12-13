@@ -1,2 +1,3 @@
 # Conclusion
 
+We utilized visualization tools such as D3js, python and R to analyze Lending Club’s loan applicants and extends to a website with interactive functionality. We find that the trait of applicants usually exhibit quite different default probabilities, especially the probability of default for rating grades goes up stepwise with lower ratings. In addition,  average interest rates differ quite a lot across states and time, and serve as a good indicator of the application pool of the borrowers. Lastly, the expected loss for the outstanding loans at the time being is relatively much higher in California, Texas, New York, and Florida, that more resources should be allotted to loan recollection and screening for new applications in these states.

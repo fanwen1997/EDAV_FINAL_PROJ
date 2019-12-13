@@ -1,8 +1,11 @@
 bookdown::gitbook:
+  output: 
+    html_document:
+      code_folding: hide
   css: style.css
   config:
     toc:
       before: |
-        <li><a href="./">SHORT TITLE HERE</a></li>
+        <li><a href="./">5702 Final Project</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>

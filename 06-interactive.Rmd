@@ -1,3 +1,5 @@
 # Interactive component
 
+One of the questions we're interested in is whether there are other factors influence the amount of loans. We created interaction graphs to illustrate our findings from three aspects: statistic, time series, and geography and use d3 to achieve them.
 
+All the information here: http://3.136.78.104
