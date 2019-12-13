@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Missing values | YOUR TITLE HERE</title>
-  <meta name="description" content="Chapter 4 Missing values | YOUR TITLE HERE" />
+  <title>Chapter 4 Missing values | 5702 Final Report : LendingClub</title>
+  <meta name="description" content="Chapter 4 Missing values | 5702 Final Report : LendingClub" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Missing values | YOUR TITLE HERE" />
+  <meta property="og:title" content="Chapter 4 Missing values | 5702 Final Report : LendingClub" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Missing values | YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Chapter 4 Missing values | 5702 Final Report : LendingClub" />
   
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="Cheng Yan(cy2479), Chengyi Chen(cc4506), Michi Liu(xl2904), Wen Fan(wf2255)" />
 
 
-<meta name="date" content="2019-11-23" />
+<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -66,14 +66,23 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">5702 Final Project</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#load-library"><i class="fa fa-check"></i><b>4.1</b> Load library</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#load-data"><i class="fa fa-check"></i><b>4.2</b> Load data</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#missing-column-pattern-graph"><i class="fa fa-check"></i><b>4.3</b> Missing column pattern graph</a></li>
+<li class="chapter" data-level="4.4" data-path="missing-values.html"><a href="missing-values.html#analysis"><i class="fa fa-check"></i><b>4.4</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#lendingclub-statistics"><i class="fa fa-check"></i><b>5.1</b> LendingClub Statistics</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#time-series-analysis"><i class="fa fa-check"></i><b>5.2</b> Time Series Analysis</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#geographical-distribution-of-loan-amount"><i class="fa fa-check"></i><b>5.3</b> Geographical Distribution of Loan Amount</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
@@ -87,7 +96,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">5702 Final Report : LendingClub</a>
           </h1>
         </div>
 
@@ -97,7 +106,25 @@
             <section class="normal" id="section-">
 <div id="missing-values" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Missing values</h1>
+<div id="load-library" class="section level2">
+<h2><span class="header-section-number">4.1</span> Load library</h2>
+</div>
+<div id="load-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Load data</h2>
+</div>
+<div id="missing-column-pattern-graph" class="section level2">
+<h2><span class="header-section-number">4.3</span> Missing column pattern graph</h2>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="analysis" class="section level2">
+<h2><span class="header-section-number">4.4</span> Analysis</h2>
+<p>This is the graph that describes the missing column pattern. It shows that we have some missing values in the variables ‘emp_length’ and ‘annual_income’. The missing pattern shows that:<br />
+- 1. Most of the missing values are in the variable ‘emp_length’.<br />
+- 2. There is no record that has missing values in these two variables at the same time.<br />
+- 3. The missing values take only a small (about 5%) part in the total number of records.<br />
+In our analysis, we will simply delete those records with missing values.</p>
 
+</div>
 </div>
             </section>
 
@@ -136,7 +163,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/master/04-missing.Rmd",
+"link": "https://github.com/fanwen1997/5702-Final-Report/edit/master/04-missing.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -144,7 +171,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/master/04-missing.Rmd",
+"link": "https://github.com/fanwen1997/5702-Final-Report/blob/master/04-missing.Rmd",
 "text": null
 },
 "download": null,

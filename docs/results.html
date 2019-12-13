@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Results | YOUR TITLE HERE</title>
-  <meta name="description" content="Chapter 5 Results | YOUR TITLE HERE" />
+  <title>Chapter 5 Results | 5702 Final Report : LendingClub</title>
+  <meta name="description" content="Chapter 5 Results | 5702 Final Report : LendingClub" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Results | YOUR TITLE HERE" />
+  <meta property="og:title" content="Chapter 5 Results | 5702 Final Report : LendingClub" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Results | YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Chapter 5 Results | 5702 Final Report : LendingClub" />
   
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="Cheng Yan(cy2479), Chengyi Chen(cc4506), Michi Liu(xl2904), Wen Fan(wf2255)" />
 
 
-<meta name="date" content="2019-11-23" />
+<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -66,14 +66,23 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">5702 Final Project</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#load-library"><i class="fa fa-check"></i><b>4.1</b> Load library</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#load-data"><i class="fa fa-check"></i><b>4.2</b> Load data</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#missing-column-pattern-graph"><i class="fa fa-check"></i><b>4.3</b> Missing column pattern graph</a></li>
+<li class="chapter" data-level="4.4" data-path="missing-values.html"><a href="missing-values.html#analysis"><i class="fa fa-check"></i><b>4.4</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#lendingclub-statistics"><i class="fa fa-check"></i><b>5.1</b> LendingClub Statistics</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#time-series-analysis"><i class="fa fa-check"></i><b>5.2</b> Time Series Analysis</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#geographical-distribution-of-loan-amount"><i class="fa fa-check"></i><b>5.3</b> Geographical Distribution of Loan Amount</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
@@ -87,7 +96,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">5702 Final Report : LendingClub</a>
           </h1>
         </div>
 
@@ -97,7 +106,153 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
+<div id="lendingclub-statistics" class="section level2">
+<h2><span class="header-section-number">5.1</span> LendingClub Statistics</h2>
+<p>Generally speaking, the amount of loans has a large range. The median of the loan amount is 12,900 dollars, the highest is 400,00 dollars with 33,368 rows corresponding to it and the lowest is 500 dollars with only 11 records getting that.
+Over half of the rows range from 8,000(25% quantile) to 20,000(75% quantile).</p>
+<pre><code>## ------------------------------------------------------------------------- 
+## Loan amount distribution
+## 
+##      length          n       NAs     unique         0s       mean
+##   2&#39;260&#39;668  2&#39;260&#39;668         0      1&#39;572          0  15&#39;046.93
+##                 100.0%      0.0%                  0.0%           
+##                                                                  
+##         .05        .10       .25     median        .75        .90
+##    3&#39;250.00   5&#39;000.00  8&#39;000.00  12&#39;900.00  20&#39;000.00  30&#39;000.00
+##                                                                  
+##       range         sd     vcoef        mad        IQR       skew
+##   39&#39;500.00   9&#39;190.25      0.61   9&#39;192.12  12&#39;000.00       0.78
+##                                                                  
+##      meanCI
+##   15&#39;034.95
+##   15&#39;058.91
+##            
+##         .95
+##   35&#39;000.00
+##            
+##        kurt
+##       -0.12
+##            
+## lowest : 500 (11), 550, 600 (6), 700 (3), 725
+## highest: 39&#39;900 (24), 39&#39;925 (14), 39&#39;950 (10), 39&#39;975 (11), 40&#39;000 (33&#39;368)
+## 
+## heap(?): remarkable frequency (8.3%) for the mode(s) (= 10000)</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Time series: As time goes on, the total amount of loans is increasing. Before 2014 the amount of loans increases steadily, but afterward, it still goes up but fluctuated. In 2016, it hit the peak at over 8.0*10^8 dollars. we could observe there is a significant growth in business since the start of 2012 and from 2014 to 2015Q4, the monthly loan amount and volume have been increasing drastically. However, from the graph we could see the growth during the spikes is very unstable.</p>
+<p><img src="finalproj_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Categories: This dataset classifies all the loans into different categories, from A to G.(The loan grade is the result of a formula that takes into account not only credit score but also a combination of several indicators of credit risk from the credit report and loan application.)</p>
+<p>Grade C gets the most loan, following by B and A. The amount of loan decreases from D to G.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>For distribution of the loan amount using histogram according to the type of loan grade. From this graph, we could observe that all the categories have similar distributions, with the peak of around 12,000.
+<img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>For distribution of the loan amount using density plot according to the type of loan grade. We found similar patterns among A, B, C, D, and similar patterns among E, F, G.
+<img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Time series: we can tell that loan is increasing generally, but like the generall trend, all grades increase unstably after 2014. And the proportion of loans from grade A is increasing dramatically compared to other grades.
+<img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>From the perspective of purpose, the amount of loan varies across different purposes. Debt consolidation is the main reason for loan, following by creadit card. Loans out of the other reasons are not as much as these two.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Debt consolidation is the main purpose of loans for all grades, taking up over 50% in every grade. The credit card takes more for Grade A, B and C, but not for the rest of grades.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Loan Status:</p>
+<p>Fully Paid: Loan has been fully paid off.</p>
+<p>Charged Off : Loan for which there is no longer a reasonable expectation of further payments.</p>
+<p>Does not meet the credit policy. Status:Fully Paid: While the loan was paid off, the loan application today would no longer meet the credit policy and wouldn’t be approved on to the marketplace.</p>
+<p>Does not meet the credit policy. Status:Charged Off: While the loan was charged off, the loan application today would no longer meet the credit policy and wouldn’t be approved on to the marketplace.</p>
+<p>Current: Loan is up to date on current payments.</p>
+<p>In Grace Period: The loan is past due but still in the grace period of 15 days.</p>
+<p>Late (31-120 days): Loan hasn’t been paid in 31 to 120 days (late on the current payment).</p>
+<p>Late (16-30 days): Loan hasn’t been paid in 16 to 30 days (late on the current payment).</p>
+<p>Default: Loan is defaulted on and no payment has been made for more than 121 days.</p>
+<p>From the perspective of loan status, fully paid and current are the most common cases, whose proportions are much higher than the others.</p>
+<pre><code>## ------------------------------------------------------------------------- 
+## loan$loan_status (factor)
+## 
+##      length         n       NAs    unique    levels     dupes
+##   2&#39;260&#39;668 2&#39;260&#39;668         0         9         9         y
+##                100.0%      0.0%                              
+## 
+##                                                  level       freq   perc    cumfreq  cumperc
+## 1                                           Fully Paid  1&#39;041&#39;952  46.1%  1&#39;041&#39;952    46.1%
+## 2                                              Current    919&#39;695  40.7%  1&#39;961&#39;647    86.8%
+## 3                                          Charged Off    261&#39;655  11.6%  2&#39;223&#39;302    98.3%
+## 4                                   Late (31-120 days)     21&#39;897   1.0%  2&#39;245&#39;199    99.3%
+## 5                                      In Grace Period      8&#39;952   0.4%  2&#39;254&#39;151    99.7%
+## 6                                    Late (16-30 days)      3&#39;737   0.2%  2&#39;257&#39;888    99.9%
+## 7   Does not meet the credit policy. Status:Fully Paid      1&#39;988   0.1%  2&#39;259&#39;876   100.0%
+## 8  Does not meet the credit policy. Status:Charged Off        761   0.0%  2&#39;260&#39;637   100.0%
+## 9                                              Default         31   0.0%  2&#39;260&#39;668   100.0%</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>For the amount of loan, all the statuses have similar ranges and medians except for Does not meet the credit policy. Status: Fully Paid and Does not meet the credit policy. Status: Charged Off</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="time-series-analysis" class="section level2">
+<h2><span class="header-section-number">5.2</span> Time Series Analysis</h2>
+<p>The interactive graph describes the sum of the monthly loan in each state. The radius of the circle shows how large the loan amount is. We can find some patterns from the time-series map.</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Before 2009, only some states have the data in the loan amount. This might because the loan business was just starting (since the Landing Club company was founded in 2006) or lack of data management.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2007-07 by state.</p>
+</div>
+<ul>
+<li><ol start="2" style="list-style-type: decimal">
+<li>From 2009 to 2012, increasing number of states have loans. By 2012, most states have loan records, but the amount of loan is relatively small. Also there is no state that has greatly large amount of loans.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2010-12 by state.</p>
+</div>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>In 2013 - 2014, we can see that the loan amounts in four states (California, Texas, New York and Florida) have greatly increased compared to other states.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2014-01 by state.</p>
+</div>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>In recent years, the four states still have the highest loan amount. At the same time, states in the East Coast also have large loan amounts.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2018-12 by state.</p>
+</div>
+</div>
+<div id="geographical-distribution-of-loan-amount" class="section level2">
+<h2><span class="header-section-number">5.3</span> Geographical Distribution of Loan Amount</h2>
+<p>From the perspective of geography, we chose the following sets of data and their descriptions:</p>
+<p>Annual_inc: The self-reported annual income provided by The hostage during registration.</p>
+<p>Loan_amnt: The listed amount of the loan applied for by the borrower. If at some point in time, The credit department reduces The loan amount, then it will be reflected in this value.
+We created two choropleth maps in the interactive component part.</p>
+<div class="figure">
+<img src="cho1.png" alt="" />
+<p class="caption">an image caption Source: average loan amount by state.</p>
+</div>
+<p>This choropleth graph shows the average loan amount for counties by states. From the legend, the deeper color of the state, the more loans that state borrowed. We can see that California, New York, Florida and Texas are the states that borrow the most loans.</p>
+<p>This graph is similar to the Map of the U.S. states and the District of Columbia by GDP in recent years.
+California, Texas, New York and Florida have both the highest GDP and loan amount. Therefore, the states with larger economies tend to borrow more.</p>
+<p>Another reason is that California is the location of Lending Club’s headquarters, so this state has more business.</p>
+<div class="figure">
+<img src="cho2.png" alt="" />
+<p class="caption">an image caption Source: average annual income by state.</p>
+</div>
+<p>This choropleth graph shows the average self-reported annual income provided by the borrower during registration by states. From the legend, the deeper the color of the state, the more annual income borrowers in that state report. We want to find out whether the income will affect the loan amount of the state. By comparing two graphs, the data show that for some states, Colorado, South Dakota, North Dakota, Vermont, Connecticut and Massachusetts, the higher the income, the lower the proportion of people who need to borrow.</p>
+<p>Iowa is blank in both graphs, which probably means the Lending club is not a popular lending company in Iowa, therefore we don’t have enough data to show the relationship between income and loans borrowing. This graph also shows that the markets of Lending Club’s current business and where potential customers are.</p>
+<p>For more detail, we can click on each state zoom in to county-level choropleth graph.</p>
+<div class="figure">
+<img src="cho3.png" alt="" />
+<p class="caption">an image caption Source: Loan amonunt and Income for New york State .</p>
+</div>
+<p>For example, we can compare the loan amount and income for counties in New York State. Comparing two graphs, the counties in the left bottom NY state borrowed a large amount of loans has low annual income.</p>
 
+</div>
 </div>
             </section>
 
@@ -136,7 +291,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/master/05-results.Rmd",
+"link": "https://github.com/fanwen1997/5702-Final-Report/edit/master/05-results.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -144,7 +299,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/master/05-results.Rmd",
+"link": "https://github.com/fanwen1997/5702-Final-Report/blob/master/05-results.Rmd",
 "text": null
 },
 "download": null,

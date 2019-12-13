@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 LendingClub Statistics | finalproj.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 LendingClub Statistics | finalproj.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 LendingClub Statistics | finalproj.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="results.html"/>
+<link rel="next" href="geographical-distribution-of-loan-amount.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">5702 Final Project</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="missing-values.html"><a href="missing-values.html#load-library"><i class="fa fa-check"></i><b>4.0.1</b> Load library</a></li>
+<li class="chapter" data-level="4.0.2" data-path="missing-values.html"><a href="missing-values.html#load-data"><i class="fa fa-check"></i><b>4.0.2</b> Load data</a></li>
+<li class="chapter" data-level="4.0.3" data-path="missing-values.html"><a href="missing-values.html#missing-column-pattern-graph"><i class="fa fa-check"></i><b>4.0.3</b> Missing column pattern graph</a></li>
+<li class="chapter" data-level="4.0.4" data-path="missing-values.html"><a href="missing-values.html#analysis"><i class="fa fa-check"></i><b>4.0.4</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="6" data-path="lendingclub-statistics.html"><a href="lendingclub-statistics.html"><i class="fa fa-check"></i><b>6</b> LendingClub Statistics</a></li>
+<li class="chapter" data-level="7" data-path="geographical-distribution-of-loan-amount.html"><a href="geographical-distribution-of-loan-amount.html"><i class="fa fa-check"></i><b>7</b> 3. Geographical Distribution of Loan Amount</a></li>
+<li class="chapter" data-level="8" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>8</b> Interactive component</a></li>
+<li class="chapter" data-level="9" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>9</b> Conclusion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lendingclub-statistics" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> LendingClub Statistics</h1>
+<!-- 1. Read the data first.  -->
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lendingclub-statistics.html#cb4-1"></a>loan &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;loan.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<p>Generally speaking, the amount of loans has a large range. The median of the loan amount is 12,900 dollars, the highest is 400,00 dollars with 33,368 rows corresponding to it and the lowest is 500 dollars with only 11 records getting that.
+Over half of the rows range from 8,000(25% quantile) to 20,000(75% quantile).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lendingclub-statistics.html#cb5-1"></a><span class="kw">Desc</span>(loan<span class="op">$</span>loan_amnt, <span class="dt">main =</span> <span class="st">&quot;Loan amount distribution&quot;</span>, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## ------------------------------------------------------------------------- 
+## Loan amount distribution
+## 
+##      length          n       NAs     unique         0s       mean
+##   2&#39;260&#39;668  2&#39;260&#39;668         0      1&#39;572          0  15&#39;046.93
+##                 100.0%      0.0%                  0.0%           
+##                                                                  
+##         .05        .10       .25     median        .75        .90
+##    3&#39;250.00   5&#39;000.00  8&#39;000.00  12&#39;900.00  20&#39;000.00  30&#39;000.00
+##                                                                  
+##       range         sd     vcoef        mad        IQR       skew
+##   39&#39;500.00   9&#39;190.25      0.61   9&#39;192.12  12&#39;000.00       0.78
+##                                                                  
+##      meanCI
+##   15&#39;034.95
+##   15&#39;058.91
+##            
+##         .95
+##   35&#39;000.00
+##            
+##        kurt
+##       -0.12
+##            
+## lowest : 500 (11), 550, 600 (6), 700 (3), 725
+## highest: 39&#39;900 (24), 39&#39;925 (14), 39&#39;950 (10), 39&#39;975 (11), 40&#39;000 (33&#39;368)
+## 
+## heap(?): remarkable frequency (8.3%) for the mode(s) (= 10000)</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Time series: As time goes on, the total amount of loans is increasing. Before 2014 the amount of loans increases steadily, but afterward, it still goes up but fluctuated. In 2016, it hit the peak at over 8.0*10^8 dollars. we could observe there is a significant growth in business since the start of 2012 and from 2014 to 2015Q4, the monthly loan amount and volume have been increasing drastically. However, from the graph we could see the growth during the spikes is very unstable.</p>
+<p><img src="finalproj_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Categories: This dataset classifies all the loans into different categories, from A to G.(The loan grade is the result of a formula that takes into account not only credit score but also a combination of several indicators of credit risk from the credit report and loan application.)</p>
+<p>Grade C gets the most loan, following by B and A. The amount of loan decreases from D to G.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lendingclub-statistics.html#cb7-1"></a><span class="kw">ggplot</span>(loan, <span class="kw">aes</span>(<span class="dt">x=</span>grade, <span class="dt">y=</span>loan_amnt, <span class="dt">fill=</span>grade)) <span class="op">+</span></span>
+<span id="cb7-2"><a href="lendingclub-statistics.html#cb7-2"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y=</span><span class="st">&quot;sum&quot;</span>, <span class="dt">geom=</span><span class="st">&quot;bar&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-3"><a href="lendingclub-statistics.html#cb7-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span><span class="st">&quot;Total Loan Amount&quot;</span>,<span class="dt">title=</span><span class="st">&quot;Total loan amount based on loan grade&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>For distribution of the loan amount using histogram according to the type of loan grade. From this graph, we could observe that all the categories have similar distributions, with the peak of around 12,000.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lendingclub-statistics.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>loan,<span class="kw">aes</span>(loan_amnt, <span class="dt">col=</span>grade))<span class="op">+</span></span>
+<span id="cb8-2"><a href="lendingclub-statistics.html#cb8-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="dv">40</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb8-3"><a href="lendingclub-statistics.html#cb8-3"></a><span class="st">  </span><span class="kw">facet_grid</span>(grade <span class="op">~</span><span class="st"> </span>.)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>For distribution of the loan amount using density plot according to the type of loan grade. We found similar patterns among A, B, C, D, and similar patterns among E, F, G.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="lendingclub-statistics.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>loan,<span class="kw">aes</span>(loan_amnt, <span class="dt">fill=</span>grade))<span class="op">+</span></span>
+<span id="cb9-2"><a href="lendingclub-statistics.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="lendingclub-statistics.html#cb9-3"></a><span class="st">  </span><span class="kw">facet_grid</span>(grade <span class="op">~</span><span class="st"> </span>.)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Time series: we can tell that loan is increasing generally, but like the generall trend, all grades increase unstably after 2014. And the proportion of loans from grade A is increasing dramatically compared to other grades.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="lendingclub-statistics.html#cb10-1"></a>amnt_df_grade &lt;-<span class="st"> </span>loan <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="lendingclub-statistics.html#cb10-2"></a><span class="st">  </span><span class="kw">select</span>(issue_d, loan_amnt, grade) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-3"><a href="lendingclub-statistics.html#cb10-3"></a><span class="st">  </span><span class="kw">group_by</span>(issue_d, grade) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-4"><a href="lendingclub-statistics.html#cb10-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Amount =</span> <span class="kw">sum</span>(loan_amnt))</span>
+<span id="cb10-5"><a href="lendingclub-statistics.html#cb10-5"></a>ts_amnt_grade &lt;-<span class="st"> </span><span class="kw">ggplot</span>(amnt_df_grade, </span>
+<span id="cb10-6"><a href="lendingclub-statistics.html#cb10-6"></a>                  <span class="kw">aes</span>(<span class="dt">x =</span> issue_d, <span class="dt">y =</span> Amount))</span>
+<span id="cb10-7"><a href="lendingclub-statistics.html#cb10-7"></a>ts_amnt_grade <span class="op">+</span><span class="st"> </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>grade)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Date issued&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>From the perspective of purpose, the amount of loan varies across different purposes. Debt consolidation is the main reason for loan, following by creadit card. Loans out of the other reasons are not as much as these two.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="lendingclub-statistics.html#cb11-1"></a>loan_group_by_purpose =<span class="st"> </span><span class="kw">aggregate</span>(loan_amnt <span class="op">~</span><span class="st"> </span>purpose, <span class="dt">data =</span> loan, sum)</span>
+<span id="cb11-2"><a href="lendingclub-statistics.html#cb11-2"></a><span class="kw">ggplot</span>(loan_group_by_purpose, <span class="kw">aes</span>(purpose,loan_amnt, <span class="dt">fill =</span> purpose)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_discrete</span>(<span class="dt">breaks=</span><span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">subtitle=</span><span class="st">&quot;Distribution of loan Amount for Purpose&quot;</span>, </span>
+<span id="cb11-3"><a href="lendingclub-statistics.html#cb11-3"></a>       <span class="dt">x=</span><span class="st">&quot;Purpose&quot;</span>, </span>
+<span id="cb11-4"><a href="lendingclub-statistics.html#cb11-4"></a>       <span class="dt">y=</span><span class="st">&quot;Loan Amount&quot;</span>,</span>
+<span id="cb11-5"><a href="lendingclub-statistics.html#cb11-5"></a>       <span class="dt">title=</span><span class="st">&quot;Bar Plot&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Debt consolidation is the main purpose of loans for all grades, taking up over 50% in every grade. The credit card takes more for Grade A, B and C, but not for the rest of grades.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lendingclub-statistics.html#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>loan, <span class="kw">aes</span>(<span class="dt">x=</span>grade, <span class="dt">fill=</span>purpose)) <span class="op">+</span></span>
+<span id="cb12-2"><a href="lendingclub-statistics.html#cb12-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()   </span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Loan Status:</p>
+<p>Fully Paid: Loan has been fully paid off.</p>
+<p>Charged Off : Loan for which there is no longer a reasonable expectation of further payments.</p>
+<p>Does not meet the credit policy. Status:Fully Paid: While the loan was paid off, the loan application today would no longer meet the credit policy and wouldn’t be approved on to the marketplace.</p>
+<p>Does not meet the credit policy. Status:Charged Off: While the loan was charged off, the loan application today would no longer meet the credit policy and wouldn’t be approved on to the marketplace.</p>
+<p>Current: Loan is up to date on current payments.</p>
+<p>In Grace Period: The loan is past due but still in the grace period of 15 days.</p>
+<p>Late (31-120 days): Loan hasn’t been paid in 31 to 120 days (late on the current payment).</p>
+<p>Late (16-30 days): Loan hasn’t been paid in 16 to 30 days (late on the current payment).</p>
+<p>Default: Loan is defaulted on and no payment has been made for more than 121 days.</p>
+<p>From the perspective of loan status, fully paid and current are the most common cases, whose proportions are much higher than the others.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="lendingclub-statistics.html#cb13-1"></a><span class="kw">Desc</span>(loan<span class="op">$</span>loan_status, <span class="dt">plotit =</span> T)</span></code></pre></div>
+<pre><code>## ------------------------------------------------------------------------- 
+## loan$loan_status (factor)
+## 
+##      length         n       NAs    unique    levels     dupes
+##   2&#39;260&#39;668 2&#39;260&#39;668         0         9         9         y
+##                100.0%      0.0%                              
+## 
+##                                                  level       freq   perc    cumfreq  cumperc
+## 1                                           Fully Paid  1&#39;041&#39;952  46.1%  1&#39;041&#39;952    46.1%
+## 2                                              Current    919&#39;695  40.7%  1&#39;961&#39;647    86.8%
+## 3                                          Charged Off    261&#39;655  11.6%  2&#39;223&#39;302    98.3%
+## 4                                   Late (31-120 days)     21&#39;897   1.0%  2&#39;245&#39;199    99.3%
+## 5                                      In Grace Period      8&#39;952   0.4%  2&#39;254&#39;151    99.7%
+## 6                                    Late (16-30 days)      3&#39;737   0.2%  2&#39;257&#39;888    99.9%
+## 7   Does not meet the credit policy. Status:Fully Paid      1&#39;988   0.1%  2&#39;259&#39;876   100.0%
+## 8  Does not meet the credit policy. Status:Charged Off        761   0.0%  2&#39;260&#39;637   100.0%
+## 9                                              Default         31   0.0%  2&#39;260&#39;668   100.0%</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>For the amount of loan, all the statuses have similar ranges and medians except for Does not meet the credit policy. Status: Fully Paid and Does not meet the credit policy. Status: Charged Off</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="lendingclub-statistics.html#cb15-1"></a>box_status &lt;-<span class="st"> </span><span class="kw">ggplot</span>(loan, <span class="kw">aes</span>(loan_status, loan_amnt))</span>
+<span id="cb15-2"><a href="lendingclub-statistics.html#cb15-2"></a>box_status <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> loan_status)) <span class="op">+</span></span>
+<span id="cb15-3"><a href="lendingclub-statistics.html#cb15-3"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></span>
+<span id="cb15-4"><a href="lendingclub-statistics.html#cb15-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="kw">list</span>(</span>
+<span id="cb15-5"><a href="lendingclub-statistics.html#cb15-5"></a>    <span class="dt">title =</span> <span class="st">&quot;Loan amount by status&quot;</span>,</span>
+<span id="cb15-6"><a href="lendingclub-statistics.html#cb15-6"></a>    <span class="dt">x =</span> <span class="st">&quot;Status&quot;</span>,</span>
+<span id="cb15-7"><a href="lendingclub-statistics.html#cb15-7"></a>    <span class="dt">y =</span> <span class="st">&quot;Amount&quot;</span>))  </span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+#2.Time Series Analysis</p>
+<p>The interactive graph describes the sum of the monthly loan in each state. The radius of the circle shows how large the loan amount is. We can find some patterns from the time-series map.</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Before 2009, only some states have the data in the loan amount. This might because the loan business was just starting (since the Landing Club company was founded in 2006) or lack of data management.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2007-07 by state.</p>
+</div>
+<ul>
+<li><ol start="2" style="list-style-type: decimal">
+<li>From 2009 to 2012, increasing number of states have loans. By 2012, most states have loan records, but the amount of loan is relatively small. Also there is no state that has greatly large amount of loans.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2010-12 by state.</p>
+</div>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>In 2013 - 2014, we can see that the loan amounts in four states (California, Texas, New York and Florida) have greatly increased compared to other states.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2014-01 by state.</p>
+</div>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>In recent years, the four states still have the highest loan amount. At the same time, states in the East Coast also have large loan amounts.</li>
+</ol></li>
+</ul>
+<div class="figure">
+<img src="TS1.png" alt="" />
+<p class="caption">an image caption Source: loan amount in 2018-12 by state.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="results.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="geographical-distribution-of-loan-amount.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/fanwen1997/5702-Final-Report/edit/master/05-results.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/fanwen1997/5702-Final-Report/blob/master/05-results.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
